@@ -1,0 +1,26 @@
+input = multiple text files (data) --> program indexes these --> output = inverted index
+  - n\r\ chars already removed
+  - need to handle \t chars (tab) --> separates key/values
+    - key = docID
+    - vals = doc contents
+  - need to handle punctuation
+    - replace all special chars/numerals w/ a space
+    - convert all words to lowercase
+
+1. create unigram index --> unigram_index.txt
+  - data = fulldata
+  - modify src code to output (word, docID:count)
+    - code currently outputs (word, count)
+  - use a map data structure in your reducer
+2. create bigram index --> selected_bigram_index.txt
+  - data = devdata
+  - just for 5 bigrams:
+    - computer science
+    - information retrieval
+    - power politics
+    - los angeles
+    - bruce willis 
+  - output: (word1, word2, docID) pairs
+  - no need to change reducer 
+3. etc. 
+  - can use smaller data files to test/if times out
